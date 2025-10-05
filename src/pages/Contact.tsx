@@ -10,7 +10,7 @@ const Contact = () => {
       icon: Phone,
       title: 'Telefon Desteği',
       description: 'Uzmanlarımızla doğrudan görüşün',
-      contact: '+90 (212) 555-0123',
+      contact: '+90 530 431 47 91',
       availability: 'Pazartesi - Cuma, 09:00 - 18:00',
       color: 'blue'
     },
@@ -18,7 +18,7 @@ const Contact = () => {
       icon: Mail,
       title: 'E-posta',
       description: 'Detaylı sorularınız için yazın',
-      contact: 'info@Leosay.com',
+      contact: 'info@leosay.com',
       availability: '7/24 aktif, 4 saat içinde yanıt',
       color: 'green'
     },
@@ -26,7 +26,7 @@ const Contact = () => {
       icon: MapPin,
       title: 'Ofis Adresi',
       description: 'Ziyaret için randevu alın',
-      contact: 'Maslak Mahallesi, Büyükdere Cad. No:123 Sarıyer/İstanbul',
+      contact: 'Saldan Collective Office, Yenişehir, Mustafa Akyol Sokağı No:7a-a İç Kapı No:27, 34912 Pendik/İstanbul',
       availability: 'Pazartesi - Cuma, 09:00 - 18:00',
       color: 'purple'
     },
@@ -47,10 +47,10 @@ const Contact = () => {
   ];
 
   const departments = [
-    { name: 'Satış Ekibi', email: 'sales@Leosay.com', description: 'Ürün bilgileri ve fiyatlandırma' },
-    { name: 'Teknik Destek', email: 'support@Leosay.com', description: 'Teknik sorular ve entegrasyon' },
-    { name: 'İş Geliştirme', email: 'business@Leosay.com', description: 'Ortaklık ve iş birliği' },
-    { name: 'Genel Müdürlük', email: 'info@Leosay.com', description: 'Genel sorular ve öneriler' }
+    { name: 'Satış Ekibi', email: 'info@leosay.com', description: 'Ürün bilgileri ve fiyatlandırma' },
+    { name: 'Teknik Destek', email: 'info@leosay.com', description: 'Teknik sorular ve entegrasyon' },
+    { name: 'İş Geliştirme', email: 'info@leosay.com', description: 'Ortaklık ve iş birliği' },
+    { name: 'Genel Müdürlük', email: 'info@leosay.com', description: 'Genel sorular ve öneriler' }
   ];
 
   return (
@@ -361,7 +361,7 @@ const Contact = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-200 font-semibold">
-              Hemen Ara: +90 (212) 555-0123
+              Hemen Ara: +90 530 431 47 91
             </button>
             <button className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-200 font-semibold">
               E-posta Gönder

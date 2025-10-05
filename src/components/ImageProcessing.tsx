@@ -157,33 +157,33 @@ const ImageProcessing = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             MES Görüntü İşleme
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Modülleri</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             Üretim süreçlerinde görüntü işleme teknolojisi ile kalite kontrol ve süreç optimizasyonu
           </p>
         </div>
 
         {/* Processing Features Tabs */}
-        <div className="mb-16">
-          <div className="flex flex-wrap justify-center mb-8 space-x-2">
+        <div className="mb-12 sm:mb-16">
+          <div className="flex flex-wrap justify-center mb-6 sm:mb-8 gap-2">
             {processingFeatures.map((feature) => (
               <button
                 key={feature.id}
                 onClick={() => setActiveTab(feature.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-lg transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 rounded-lg transition-all duration-200 text-sm sm:text-base ${
                   activeTab === feature.id
                     ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
-                <feature.icon className="h-5 w-5" />
+                <feature.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                 <span className="font-medium">{feature.title}</span>
               </button>
             ))}
@@ -192,8 +192,8 @@ const ImageProcessing = () => {
           {/* Active Tab Content */}
           {processingFeatures.map((feature) => (
             activeTab === feature.id && (
-              <div key={feature.id} className="bg-gray-50 rounded-2xl p-8">
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div key={feature.id} className="bg-gray-50 rounded-2xl p-4 sm:p-6 lg:p-8">
+                <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
                   <div>
                     <div className={`inline-flex p-3 rounded-xl mb-6 ${getColorClasses(feature.color)}`}>
                       <feature.icon className="h-8 w-8" />
@@ -255,37 +255,37 @@ const ImageProcessing = () => {
         </div>
 
         {/* Use Cases */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">MES Uygulama Alanları</h3>
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="mb-12 sm:mb-16">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8 sm:mb-12">MES Uygulama Alanları</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {useCases.map((useCase, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
                 <div className="relative">
                   <img
                     src={useCase.image}
                     alt={useCase.title}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-40 sm:h-48 object-cover"
                   />
-                  <div className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md">
-                    <Factory className="h-4 w-4 text-blue-600" />
+                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white rounded-full p-1.5 sm:p-2 shadow-md">
+                    <Factory className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600" />
                   </div>
                 </div>
                 
-                <div className="p-6">
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">{useCase.title}</h4>
-                  <p className="text-gray-600 mb-4">{useCase.description}</p>
+                <div className="p-4 sm:p-6">
+                  <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{useCase.title}</h4>
+                  <p className="text-sm sm:text-base text-gray-600 mb-4">{useCase.description}</p>
                   
-                  <div className="grid grid-cols-3 gap-2 mb-4">
+                  <div className="grid grid-cols-3 gap-1 sm:gap-2 mb-4">
                     <div className="text-center">
-                      <div className="text-sm font-bold text-green-600">{useCase.metrics.accuracy}</div>
+                      <div className="text-xs sm:text-sm font-bold text-green-600">{useCase.metrics.accuracy}</div>
                       <div className="text-xs text-gray-500">Doğruluk</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-sm font-bold text-blue-600">{useCase.metrics.speed}</div>
+                      <div className="text-xs sm:text-sm font-bold text-blue-600">{useCase.metrics.speed}</div>
                       <div className="text-xs text-gray-500">Hız</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-sm font-bold text-purple-600">{Object.values(useCase.metrics)[2]}</div>
+                      <div className="text-xs sm:text-sm font-bold text-purple-600">{Object.values(useCase.metrics)[2]}</div>
                       <div className="text-xs text-gray-500">
                         {Object.keys(useCase.metrics)[2] === 'boards' ? 'PCB' : 
                          Object.keys(useCase.metrics)[2] === 'parts' ? 'Parça' : 'Metre'}
@@ -293,14 +293,12 @@ const ImageProcessing = () => {
                     </div>
                   </div>
                   
-                  <button className="w-full bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-gray-200 transition-colors duration-200">
-                    <button 
-                      onClick={() => setSelectedUseCase(useCase.id)}
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2"
-                    >
-                      <span>Detayları Görüntüle</span>
-                      <ArrowRight className="h-4 w-4" />
-                    </button>
+                  <button 
+                    onClick={() => setSelectedUseCase(useCase.id)}
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 sm:py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2 text-sm sm:text-base"
+                  >
+                    <span>Detayları Görüntüle</span>
+                    <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
                   </button>
                 </div>
               </div>
@@ -309,46 +307,46 @@ const ImageProcessing = () => {
         </div>
 
         {/* ERP Integration */}
-        <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-12 text-white">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold mb-4">ERP/CRM Entegrasyonu</h3>
-            <p className="text-gray-300 text-lg">Mevcut sistemlerinizle sorunsuz entegrasyon</p>
+        <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-6 sm:p-8 lg:p-12 text-white">
+          <div className="text-center mb-6 sm:mb-8">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4">ERP/CRM Entegrasyonu</h3>
+            <p className="text-gray-300 text-base sm:text-lg">Mevcut sistemlerinizle sorunsuz entegrasyon</p>
           </div>
           
-          <div className="grid md:grid-cols-4 gap-8 text-center mb-8">
-            <div className="bg-white bg-opacity-10 rounded-xl p-6">
-              <div className="text-2xl mb-3">🔷</div>
-              <h3 className="font-semibold text-white mb-2">SAP ERP</h3>
-              <p className="text-gray-300 text-sm">Üretim emirleri ve stok entegrasyonu</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center mb-6 sm:mb-8">
+            <div className="bg-white bg-opacity-10 rounded-xl p-3 sm:p-4 lg:p-6">
+              <div className="text-xl sm:text-2xl mb-2 sm:mb-3">🔷</div>
+              <h3 className="font-semibold text-white mb-1 sm:mb-2 text-sm sm:text-base">SAP ERP</h3>
+              <p className="text-gray-300 text-xs sm:text-sm">Üretim emirleri ve stok entegrasyonu</p>
             </div>
-            <div className="bg-white bg-opacity-10 rounded-xl p-6">
-              <div className="text-2xl mb-3">🔴</div>
-              <h3 className="font-semibold text-white mb-2">Oracle</h3>
-              <p className="text-gray-300 text-sm">Veritabanı ve iş süreçleri</p>
+            <div className="bg-white bg-opacity-10 rounded-xl p-3 sm:p-4 lg:p-6">
+              <div className="text-xl sm:text-2xl mb-2 sm:mb-3">🔴</div>
+              <h3 className="font-semibold text-white mb-1 sm:mb-2 text-sm sm:text-base">Oracle</h3>
+              <p className="text-gray-300 text-xs sm:text-sm">Veritabanı ve iş süreçleri</p>
             </div>
-            <div className="bg-white bg-opacity-10 rounded-xl p-6">
-              <div className="text-2xl mb-3">🔶</div>
-              <h3 className="font-semibold text-white mb-2">Microsoft</h3>
-              <p className="text-gray-300 text-sm">Dynamics 365 entegrasyonu</p>
+            <div className="bg-white bg-opacity-10 rounded-xl p-3 sm:p-4 lg:p-6">
+              <div className="text-xl sm:text-2xl mb-2 sm:mb-3">🔶</div>
+              <h3 className="font-semibold text-white mb-1 sm:mb-2 text-sm sm:text-base">Microsoft</h3>
+              <p className="text-gray-300 text-xs sm:text-sm">Dynamics 365 entegrasyonu</p>
             </div>
-            <div className="bg-white bg-opacity-10 rounded-xl p-6">
-              <div className="text-2xl mb-3">☁️</div>
-              <h3 className="font-semibold text-white mb-2">Salesforce</h3>
-              <p className="text-gray-300 text-sm">CRM ve müşteri yönetimi</p>
+            <div className="bg-white bg-opacity-10 rounded-xl p-3 sm:p-4 lg:p-6">
+              <div className="text-xl sm:text-2xl mb-2 sm:mb-3">☁️</div>
+              <h3 className="font-semibold text-white mb-1 sm:mb-2 text-sm sm:text-base">Salesforce</h3>
+              <p className="text-gray-300 text-xs sm:text-sm">CRM ve müşteri yönetimi</p>
             </div>
           </div>
           
-          <div className="bg-gray-800 rounded-xl p-6 max-w-4xl mx-auto">
-            <div className="flex items-center justify-between mb-4">
+          <div className="bg-gray-800 rounded-xl p-4 sm:p-6 max-w-4xl mx-auto">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
               <div className="flex space-x-2">
-                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-400 rounded-full"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-400 rounded-full"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full"></div>
               </div>
-              <span className="text-gray-400 text-sm">MES API</span>
+              <span className="text-gray-400 text-xs sm:text-sm">MES API</span>
             </div>
             
-            <pre className="text-green-400 text-sm overflow-x-auto">
+            <pre className="text-green-400 text-xs sm:text-sm overflow-x-auto">
 {`import mes_api
 
 # MES istemcisini başlat
@@ -385,54 +383,54 @@ else:
                 return (
                   <>
                     {/* Modal Header */}
-                    <div className="sticky top-0 bg-white border-b border-gray-200 px-8 py-6 flex items-center justify-between">
+                    <div className="sticky top-0 bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 flex items-center justify-between">
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900">{useCase.title}</h3>
-                        <p className="text-gray-600 mt-1">MES Detaylı Proje Bilgileri</p>
+                        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">{useCase.title}</h3>
+                        <p className="text-gray-600 mt-1 text-sm sm:text-base">MES Detaylı Proje Bilgileri</p>
                       </div>
                       <button
                         onClick={() => setSelectedUseCase(null)}
                         className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
                       >
-                        <X className="h-6 w-6 text-gray-500" />
+                        <X className="h-5 w-5 sm:h-6 sm:w-6 text-gray-500" />
                       </button>
                     </div>
 
                     {/* Modal Content */}
-                    <div className="p-8 space-y-8">
+                    <div className="p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8">
                       {/* Overview */}
                       <div>
-                        <h4 className="text-xl font-bold text-gray-900 mb-4">Proje Genel Bakış</h4>
-                        <p className="text-gray-600 leading-relaxed">{useCase.detailedInfo.overview}</p>
+                        <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">Proje Genel Bakış</h4>
+                        <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{useCase.detailedInfo.overview}</p>
                       </div>
 
                       {/* Challenges & Solutions */}
-                      <div className="grid md:grid-cols-2 gap-8">
+                      <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
                         <div>
-                          <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                            <AlertTriangle className="h-5 w-5 text-orange-500 mr-2" />
+                          <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4 flex items-center">
+                            <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 mr-2" />
                             Teknik Zorluklar
                           </h4>
-                          <div className="space-y-3">
+                          <div className="space-y-2 sm:space-y-3">
                             {useCase.detailedInfo.challenges.map((challenge, index) => (
-                              <div key={index} className="flex items-start space-x-3 p-3 bg-orange-50 rounded-lg">
-                                <div className="w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
-                                <p className="text-gray-700 text-sm">{challenge}</p>
+                              <div key={index} className="flex items-start space-x-2 sm:space-x-3 p-2 sm:p-3 bg-orange-50 rounded-lg">
+                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-orange-500 mt-2"></div>
+                                <p className="text-gray-700 text-xs sm:text-sm">{challenge}</p>
                               </div>
                             ))}
                           </div>
                         </div>
 
                         <div>
-                          <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                          <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4 flex items-center">
+                            <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 mr-2" />
                             Leosay Çözümleri
                           </h4>
-                          <div className="space-y-3">
+                          <div className="space-y-2 sm:space-y-3">
                             {useCase.detailedInfo.solutions.map((solution, index) => (
-                              <div key={index} className="flex items-start space-x-3 p-3 bg-green-50 rounded-lg">
-                                <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                                <p className="text-gray-700 text-sm">{solution}</p>
+                              <div key={index} className="flex items-start space-x-2 sm:space-x-3 p-2 sm:p-3 bg-green-50 rounded-lg">
+                                <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 mt-0.5" />
+                                <p className="text-gray-700 text-xs sm:text-sm">{solution}</p>
                               </div>
                             ))}
                           </div>
@@ -441,16 +439,16 @@ else:
 
                       {/* Results */}
                       <div>
-                        <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                          <TrendingUp className="h-5 w-5 text-blue-500 mr-2" />
+                        <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center">
+                          <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-blue-500 mr-2" />
                           Elde Edilen Sonuçlar
                         </h4>
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                           {useCase.detailedInfo.results.map((result, index) => (
-                            <div key={index} className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-200">
-                              <h5 className="font-semibold text-gray-900 mb-2">{result.metric}</h5>
-                              <div className="text-2xl font-bold text-blue-600 mb-1">{result.value}</div>
-                              <div className="text-sm text-green-600 font-medium">{result.improvement}</div>
+                            <div key={index} className="bg-gradient-to-br from-blue-50 to-purple-50 p-4 sm:p-6 rounded-xl border border-blue-200">
+                              <h5 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{result.metric}</h5>
+                              <div className="text-lg sm:text-2xl font-bold text-blue-600 mb-1">{result.value}</div>
+                              <div className="text-xs sm:text-sm text-green-600 font-medium">{result.improvement}</div>
                             </div>
                           ))}
                         </div>

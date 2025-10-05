@@ -275,7 +275,7 @@ const SupportCenter = () => {
                   <Phone className="h-8 w-8 text-blue-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Telefon Desteği</h3>
-                <p className="text-gray-600 mb-2">+90 (212) 555-0123</p>
+                <p className="text-gray-600 mb-2">+90 530 431 47 91</p>
                 <p className="text-sm text-gray-500">Pazartesi - Cuma, 09:00 - 18:00</p>
               </div>
               
@@ -284,7 +284,7 @@ const SupportCenter = () => {
                   <Mail className="h-8 w-8 text-purple-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">E-posta Desteği</h3>
-                <p className="text-gray-600 mb-2">support@leosay.com</p>
+                <p className="text-gray-600 mb-2">info@leosay.com</p>
                 <p className="text-sm text-gray-500">7/24 aktif, 4 saat içinde yanıt</p>
               </div>
             </div>

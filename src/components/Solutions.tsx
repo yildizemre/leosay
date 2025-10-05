@@ -263,21 +263,21 @@ const Solutions = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             {t('solutions.title')}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> {t('solutions.title.highlight')}</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             {t('solutions.subtitle')}
           </p>
         </div>
 
         {/* Solutions Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {solutions.map((solution, index) => (
             <div
               key={index}
@@ -288,28 +288,28 @@ const Solutions = () => {
                 <img
                   src={solution.image}
                   alt={solution.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute top-4 right-4 bg-white rounded-full p-3 shadow-lg">
-                  <solution.icon className={`h-6 w-6 ${getIconColor(solution.color)}`} />
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white rounded-full p-2 sm:p-3 shadow-lg">
+                  <solution.icon className={`h-5 w-5 sm:h-6 sm:w-6 ${getIconColor(solution.color)}`} />
                 </div>
-                <div className="absolute bottom-4 left-4">
-                  <h3 className="text-xl font-bold text-white">{solution.title}</h3>
+                <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-white">{solution.title}</h3>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <p className="text-gray-600 mb-4 leading-relaxed">{solution.description}</p>
+              <div className="p-4 sm:p-6">
+                <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">{solution.description}</p>
                 
                 {/* Features */}
                 <div className="mb-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Temel Özellikler:</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Temel Özellikler:</h4>
                   <div className="grid grid-cols-2 gap-1">
                     {solution.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center text-sm text-gray-600">
-                        <div className={`w-2 h-2 rounded-full mr-2 bg-gradient-to-r ${getColorClasses(solution.color)}`}></div>
+                      <div key={featureIndex} className="flex items-center text-xs sm:text-sm text-gray-600">
+                        <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full mr-2 bg-gradient-to-r ${getColorClasses(solution.color)}`}></div>
                         {feature}
                       </div>
                     ))}
@@ -317,11 +317,11 @@ const Solutions = () => {
                 </div>
 
                 {/* Metrics */}
-                <div className="mb-6">
-                  <div className="grid grid-cols-3 gap-2">
+                <div className="mb-4 sm:mb-6">
+                  <div className="grid grid-cols-3 gap-1 sm:gap-2">
                     {Object.entries(solution.metrics).map(([key, value], metricIndex) => (
-                      <div key={metricIndex} className="text-center p-2 bg-gray-50 rounded-lg">
-                        <div className={`text-sm font-bold ${getIconColor(solution.color)}`}>{value}</div>
+                      <div key={metricIndex} className="text-center p-1.5 sm:p-2 bg-gray-50 rounded-lg">
+                        <div className={`text-xs sm:text-sm font-bold ${getIconColor(solution.color)}`}>{value}</div>
                         <div className="text-xs text-gray-500 capitalize">
                           {key === 'accuracy' ? 'Doğruluk' : 
                            key === 'speed' ? 'Hız' : 
@@ -342,10 +342,10 @@ const Solutions = () => {
                 {/* CTA Button */}
                 <button 
                   onClick={() => setSelectedSolution(solution.id)}
-                  className={`w-full bg-gradient-to-r ${getColorClasses(solution.color)} text-white py-3 rounded-lg hover:shadow-lg transition-all duration-200 font-semibold flex items-center justify-center space-x-2`}
+                  className={`w-full bg-gradient-to-r ${getColorClasses(solution.color)} text-white py-2 sm:py-3 rounded-lg hover:shadow-lg transition-all duration-200 font-semibold flex items-center justify-center space-x-2 text-sm sm:text-base`}
                 >
                   <span>{t('solutions.explore-solution')}</span>
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
                 </button>
               </div>
             </div>
@@ -354,56 +354,56 @@ const Solutions = () => {
 
 
         {/* Integration Showcase */}
-        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-12">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">{t('solutions.easy-integration')}</h3>
-            <p className="text-xl text-gray-600">{t('solutions.works-seamlessly')}</p>
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-6 sm:p-8 lg:p-12">
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">{t('solutions.easy-integration')}</h3>
+            <p className="text-lg sm:text-xl text-gray-600">{t('solutions.works-seamlessly')}</p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             <div className="text-center">
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 mb-4">
-                <Shield className="h-12 w-12 text-red-600 mx-auto mb-4" />
-                <h4 className="font-semibold text-gray-900 mb-2">{t('solutions.secure')}</h4>
-                <p className="text-sm text-gray-600">{t('solutions.secure.desc')}</p>
+              <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200 mb-4">
+                <Shield className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-red-600 mx-auto mb-3 sm:mb-4" />
+                <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{t('solutions.secure')}</h4>
+                <p className="text-xs sm:text-sm text-gray-600">{t('solutions.secure.desc')}</p>
               </div>
             </div>
 
             <div className="text-center">
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 mb-4">
-                <Eye className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <h4 className="font-semibold text-gray-900 mb-2">{t('solutions.fast')}</h4>
-                <p className="text-sm text-gray-600">{t('solutions.fast.desc')}</p>
+              <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200 mb-4">
+                <Eye className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-blue-600 mx-auto mb-3 sm:mb-4" />
+                <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{t('solutions.fast')}</h4>
+                <p className="text-xs sm:text-sm text-gray-600">{t('solutions.fast.desc')}</p>
               </div>
             </div>
 
             <div className="text-center">
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 mb-4">
-                <Zap className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-                <h4 className="font-semibold text-gray-900 mb-2">{t('solutions.scalable')}</h4>
-                <p className="text-sm text-gray-600">{t('solutions.scalable.desc')}</p>
+              <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200 mb-4">
+                <Zap className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-purple-600 mx-auto mb-3 sm:mb-4" />
+                <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{t('solutions.scalable')}</h4>
+                <p className="text-xs sm:text-sm text-gray-600">{t('solutions.scalable.desc')}</p>
               </div>
             </div>
 
             <div className="text-center">
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 mb-4">
-                <Building className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <h4 className="font-semibold text-gray-900 mb-2">{t('solutions.reliable')}</h4>
-                <p className="text-sm text-gray-600">{t('solutions.reliable.desc')}</p>
+              <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200 mb-4">
+                <Building className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-green-600 mx-auto mb-3 sm:mb-4" />
+                <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{t('solutions.reliable')}</h4>
+                <p className="text-xs sm:text-sm text-gray-600">{t('solutions.reliable.desc')}</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">{t('solutions.ready-transform')}</h3>
-            <p className="text-blue-100 mb-6 text-lg">
+        <div className="mt-12 sm:mt-16 text-center">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 sm:p-8 text-white max-w-4xl mx-auto">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4">{t('solutions.ready-transform')}</h3>
+            <p className="text-blue-100 mb-6 text-base sm:text-lg">
               {t('solutions.companies-transformed')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-md hover:shadow-lg font-semibold text-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Link to="/contact" className="bg-white text-blue-600 px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-md hover:shadow-lg font-semibold text-center text-sm sm:text-base">
                 {t('solutions.free-consultation')}
               </Link>
             </div>

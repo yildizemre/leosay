@@ -41,6 +41,13 @@ const Footer = () => {
                 {t('footer.empowering-businesses')}
               </p>
               
+              <div className="space-y-2 text-sm text-gray-400">
+                <p><strong className="text-white">Adres:</strong></p>
+                <p>Saldan Collective Office, Yenişehir, Mustafa Akyol Sokağı No:7a-a İç Kapı No:27, 34912 Pendik/İstanbul</p>
+                <p><strong className="text-white">Telefon:</strong> +90 530 431 47 91</p>
+                <p><strong className="text-white">E-posta:</strong> info@leosay.com</p>
+              </div>
+              
               {/* Social Links */}
               <div className="flex space-x-4">
                 <a
